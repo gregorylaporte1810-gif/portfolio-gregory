@@ -61,17 +61,24 @@ function App() {
           <h2>Mes projets</h2>
 
 
-        {projects.map((project) => (
-          <ProjectCard
-            key={project.id}
-            image={project.image}
-            alt={project.alt}
-            title={project.title}
-            description={project.description}
-            technologies={project.technologies}
-            githubUrl={project.githubUrl}
-          />
-        ))}
+
+      {projects.map((project) => (
+        <ProjectCard
+          key={project.id}
+          image={project.image}
+          alt={project.alt}
+          title={project.title}
+          description={project.description}
+          technologies={project.technologies}
+          context={project.context}
+          objectives={project.objectives}
+          skills={project.skills}
+          results={project.results}
+          improvements={project.improvements}
+          githubUrl={project.githubUrl}
+        />
+      ))}
+
 
 
       </section>

@@ -181,7 +181,7 @@ main > p {
 .projets {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  align-items: stretch;
+  align-items: start;
   gap: 30px;
   margin-top: 160px;
 }
@@ -545,4 +545,37 @@ a.bouton-code:hover {
   .carte-projet:hover {
     transform: none;
   }
+}
+
+
+/* Bouton Découvrir le projet */
+
+.carte-projet .bouton-details {
+  width: 100%;
+  min-height: 52px;
+  margin-top: 12px;
+  align-self: stretch;
+}
+
+/* Informations détaillées du projet */
+
+.details-projet {
+  width: 100%;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #38BDF8;
+}
+
+.details-projet h4 {
+  margin: 20px 0 10px;
+  color: #38BDF8;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.details-projet p {
+  margin: 0 0 18px;
+  color: #CBD5E1;
+  font-size: 16px;
+  line-height: 1.6;
 }
