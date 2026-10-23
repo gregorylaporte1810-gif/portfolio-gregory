@@ -1,21 +1,45 @@
 
+import { useState } from 'react'
 import './App.css'
 
+
+
 function App() {
+  
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <>
-      <header>
-        <a href="#accueil" className="logo">
+      <header className="header">
+        <div className="logo">
           Grégory<span>.dev</span>
-        </a>
+        </div>
 
-        <nav aria-label="Navigation principale">
-          <a href="#accueil">Accueil</a>
-          <a href="#apropos">À propos</a>
-          <a href="#projets">Projets</a>
-          <a href="#competences">Compétences</a>
-          <a href="#parcours">Parcours</a>
-          <a href="#contact">Contact</a>
+        
+        <button
+          type="button"
+          className="menu-toggle"
+          aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+          aria-controls="navigation-principale"
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuOpen ? "✕" : "☰"}
+        </button>
+
+        
+          <nav
+            id="navigation-principale"
+            aria-label="Navigation principale"
+            className={menuOpen ? "menu-ouvert" : ""}
+          >
+
+          <a href="#accueil" onClick={() => setMenuOpen(false)}>Accueil</a>
+          <a href="#apropos" onClick={() => setMenuOpen(false)}>À propos</a>
+          <a href="#projets" onClick={() => setMenuOpen(false)}>Projets</a>
+          <a href="#competences" onClick={() => setMenuOpen(false)}>Compétences</a>
+          <a href="#parcours" onClick={() => setMenuOpen(false)}>Parcours</a>
+          <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
         </nav>
       </header>
 
@@ -85,9 +109,16 @@ function App() {
           </p>
 
           
-          <button type="button" className="bouton-code">
+          
+          <a
+            href="https://github.com/gregorylaporte1810-gif/kasa"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bouton-code"
+          >
             Voir le code
-          </button>
+          </a>
+
           </div>
 
           <div className="carte-projet">
@@ -110,16 +141,23 @@ function App() {
               Node.js · Express · MongoDB · JWT
             </p>
 
-            <button type="button" className="bouton-code">
-              Voir le code
-            </button>
+            
+          <a
+            href="https://github.com/gregorylaporte1810-gif/mon-vieux-grimoire"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bouton-code"
+          >
+            Voir le code
+          </a>
+
           </div>
 
 
           <div className="carte-projet">
             
             <img
-              src="/public/images/cap-forme (2).png"
+              src="/images/cap-forme (2).png"
               alt="Capture d'écran du projet Cap Forme"
               className="image-projet"
             />
@@ -136,9 +174,16 @@ function App() {
               React · Supabase · PostgreSQL · Recharts
             </p>
 
-            <button type="button" className="bouton-code">
+            
+            <a
+              href="https://github.com/gregorylaporte1810-gif/cap-forme"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bouton-code"
+            >
               Voir le code
-            </button>
+            </a>
+
           </div>
 
       </section>
@@ -238,9 +283,14 @@ function App() {
             
 
             <div className="boutons-contact">
-              <a href="mailto:" className="bouton bouton-principal">
+              
+              <a
+                href="mailto:gregorylaporte1810@gmail.com"
+                className="bouton bouton-principal"
+              >
                 M'envoyer un e-mail
               </a>
+
 
               <a
                 href="https://github.com/gregorylaporte1810-gif"

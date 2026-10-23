@@ -1,84 +1,114 @@
+/* =====================================================
+   GRÉGORY.DEV — PORTFOLIO REACT
+   Fichier complet : ordinateur, tablette et mobile
+   À placer dans src/App.css
+   ===================================================== */
 
-#root {
-  width: 100%;
-  min-height: 100vh;
-}
-
-main {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 200px 90px 120px;
-}
-
-h1 {
-  margin: 0;
-  font-size: 56px;
-  font-weight: 700;
-  line-height: 1.15;
+/* 1. BASE DU SITE ------------------------------------ */
+:root {
+  font-family: Inter, Arial, sans-serif;
   color: #F8FAFC;
+  background-color: #0B1120;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
-main p {
-  margin-top: 50px;
-  font-size: 30px;
-  font-weight: 500;
-  color: #38BDF8;
-}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; min-height: 100vh; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button { font: inherit; }
+img { max-width: 100%; }
 
+#root { width: 100%; min-height: 100vh; }
 
+/* 2. EN-TÊTE ET NAVIGATION --------------------------- */
 header {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
   max-width: 1440px;
   margin: 0 auto;
   padding: 36px 90px;
 }
 
 .logo {
+  flex-shrink: 0;
+  color: #F8FAFC;
   font-size: 28px;
   font-weight: 700;
-  color: #F8FAFC;
   text-decoration: none;
+  white-space: nowrap;
 }
-
-.logo span {
-  color: #38BDF8;
-}
-
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 32px;
-}
+.logo span { color: #38BDF8; }
 
 header nav {
   display: flex;
   align-items: center;
   gap: 30px;
 }
-
 header nav a {
   color: #CBD5E1;
-  text-decoration: none;
   font-size: 18px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+header nav a:first-child,
+header nav a:hover { color: #38BDF8; }
+
+/* Invisible sur ordinateur et tablette. */
+.menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #F8FAFC;
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
 }
 
-header nav a:first-child {
+/* 3. ACCUEIL ----------------------------------------- */
+main {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 200px 90px 120px;
+}
+
+main > h1 {
+  margin: 0;
+  color: #F8FAFC;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+main > p {
+  margin: 50px 0 0;
   color: #38BDF8;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.4;
 }
 
-
-/* Boutons de l'accueil */
-
-main p {
-  margin-bottom: 0;
-}
-
-.boutons-accueil {
+.boutons-accueil,
+.boutons-contact {
   display: flex;
+  flex-wrap: wrap;
   gap: 24px;
-  margin-top: 64px;
 }
+.boutons-accueil { margin-top: 64px; }
 
 .bouton {
   display: inline-flex;
@@ -86,371 +116,404 @@ main p {
   align-items: center;
   width: 280px;
   min-height: 60px;
+  padding: 12px 18px;
   border-radius: 8px;
   font-size: 18px;
   font-weight: 600;
+  line-height: 1.3;
   text-decoration: none;
+  text-align: center;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
-
-.bouton-principal {
-  background-color: #2563EB;
-  color: #FFFFFF;
-}
-
+.bouton:hover { transform: translateY(-2px); }
+.bouton-principal { background-color: #2563EB; color: #FFFFFF; }
+.bouton-principal:hover { background-color: #1D4ED8; }
 .bouton-secondaire {
+  border: 1px solid #38BDF8;
   background-color: transparent;
   color: #F8FAFC;
-  border: 1px solid #38BDF8;
 }
+.bouton-secondaire:hover { background-color: #1E293B; }
 
-
-/* Section À propos */
-
-.a-propos {
-  margin-top: 200px;
-}
-
-.a-propos h2 {
-  font-size: 40px;
-  font-weight: 700;
-  line-height: 1.2;
-  color: #F8FAFC;
-  margin: 0 0 45px;
-}
-
-.a-propos p {
-  max-width: 650px;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #CBD5E1;
-  margin: 0 0 24px;
-}
-
-
-/* Disposition de la section À propos */
-
+/* 4. À PROPOS ---------------------------------------- */
 .a-propos {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 60px;
+  margin-top: 200px;
 }
-
-.a-propos-contenu {
-  flex: 1;
+.a-propos-contenu { flex: 1; min-width: 0; max-width: 650px; }
+.a-propos h2,
+.projets h2,
+.competences h2,
+.parcours h2,
+.contact h2 {
+  margin: 0 0 45px;
+  color: #F8FAFC;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.a-propos p {
   max-width: 650px;
+  margin: 0 0 24px;
+  color: #CBD5E1;
+  font-size: 20px;
+  line-height: 1.5;
 }
-
 .a-propos-illustration {
-  width: 480px;
-  height: 290px;
-  flex-shrink: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  background-color: #1E293B;
+  flex: 0 1 480px;
+  min-width: 0;
+  height: 290px;
   border: 1px solid #38BDF8;
   border-radius: 12px;
-
+  background-color: #1E293B;
   color: #38BDF8;
   font-size: 96px;
   font-weight: 700;
 }
 
-
-/* Section Mes projets */
-
+/* 5. PROJETS ----------------------------------------- */
 .projets {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 30px;
   margin-top: 160px;
 }
-
 .projets h2 {
-  margin: 0 0 50px;
-  font-size: 40px;
-  font-weight: 700;
-  line-height: 1.2;
-  color: #F8FAFC;
+  grid-column: 1 / -1;
+  margin-bottom: 20px;
 }
-
-
-/* Carte du projet Kasa */
-
 .carte-projet {
-  width: 400px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
   min-height: 520px;
   padding: 20px;
-  background-color: #1E293B;
   border: 1px solid #334155;
   border-radius: 12px;
+  background-color: #1E293B;
 }
-
-.image-projet {
-  width: 100%;
-  height: 180px;
-  background-color: #334155;
-  border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #94A3B8;
-  font-size: 16px;
-}
-
-.carte-projet h3 {
-  margin: 24px 0 16px;
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 32px;
-  color: #F8FAFC;
-}
-
-.carte-projet p {
-  margin: 0 0 20px;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 26px;
-  color: #CBD5E1;
-}
-
-.carte-projet .technologies {
-  margin-top: 20px;
-  font-size: 16px;
-  line-height: 24px;
-  color: #94A3B8;
-}
-
-
-/* Affichage des captures de projets */
-
+.image-projet,
 img.image-projet {
   display: block;
   width: 100%;
   height: 180px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background-color: #334155;
   object-fit: cover;
   object-position: center;
-  border-radius: 8px;
 }
-
-
-/* Bouton Voir le code */
-
+.carte-projet h3 {
+  margin: 24px 0 16px;
+  color: #F8FAFC;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+.carte-projet p {
+  margin: 0 0 20px;
+  color: #CBD5E1;
+  font-size: 18px;
+  line-height: 1.45;
+}
+.carte-projet .technologies {
+  margin-top: 20px;
+  color: #94A3B8;
+  font-size: 16px;
+  line-height: 1.5;
+}
 .bouton-code {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-
+  align-self: flex-start;
   width: 160px;
-  height: 60px;
-
+  min-height: 60px;
+  margin-top: auto;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 8px;
   background-color: #2563EB;
   color: #FFFFFF;
-
-  border: none;
-  border-radius: 8px;
-
   font-size: 16px;
   font-weight: 600;
-
   cursor: pointer;
 }
+.bouton-code:hover { background-color: #1D4ED8; }
 
-
-/* Alignement des cartes de projets */
-
-.projets {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  align-items: flex-start;
-}
-
-.projets h2 {
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-
-/* Alignement du contenu des cartes */
-
-.carte-projet {
-  display: flex;
-  flex-direction: column;
-}
-
-.carte-projet .bouton-code {
-  margin-top: auto;
-  align-self: flex-start;
-}
-
-
-/* Section Mes compétences */
-
+/* 6. COMPÉTENCES ------------------------------------- */
 .competences {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 235px));
+  gap: 20px;
   margin-top: 160px;
 }
-
 .competences h2 {
-  margin: 0 0 50px;
-  font-size: 40px;
-  font-weight: 700;
-  line-height: 1.2;
-  color: #F8FAFC;
-}
-
-
-/* Cartes de compétences */
-
-.carte-competence {
-  width: 235px;
-  min-height: 200px;
-  padding: 24px 20px;
-
-  background-color: #1E293B;
-  border: 1px solid #334155;
-  border-radius: 12px;
-}
-
-.carte-competence h3 {
-  margin: 0 0 28px;
-
-  font-size: 22px;
-  font-weight: 600;
-  line-height: 28px;
-  color: #F8FAFC;
-}
-
-.carte-competence p {
-  margin: 0;
-
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 26px;
-  color: #CBD5E1;
-}
-
-
-/* Alignement des cartes de compétences */
-
-.competences {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  align-items: flex-start;
-}
-
-.competences h2 {
-  width: 100%;
+  grid-column: 1 / -1;
   margin-bottom: 30px;
 }
-
-
-/* Section Mon parcours */
-
-.parcours {
-  margin-top: 160px;
-}
-
-.parcours h2 {
-  margin: 0 0 50px;
-  font-size: 40px;
-  font-weight: 700;
-  line-height: 1.2;
-  color: #F8FAFC;
-}
-
-
-/* Cartes du parcours professionnel */
-
-.carte-parcours {
-  max-width: 850px;
-  padding: 30px;
-
-  background-color: #1E293B;
+.carte-competence {
+  min-width: 0;
+  min-height: 200px;
+  padding: 24px 20px;
   border: 1px solid #334155;
   border-radius: 12px;
+  background-color: #1E293B;
+}
+.carte-competence h3 {
+  margin: 0 0 28px;
+  color: #F8FAFC;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.carte-competence p {
+  margin: 0;
+  color: #CBD5E1;
+  font-size: 18px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
 }
 
+/* 7. PARCOURS ---------------------------------------- */
+.parcours { margin-top: 160px; }
+.parcours h2 { margin-bottom: 50px; }
+.carte-parcours {
+  width: 100%;
+  max-width: 850px;
+  padding: 30px;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  background-color: #1E293B;
+}
+.carte-parcours + .carte-parcours { margin-top: 24px; }
 .carte-parcours h3 {
   margin: 0 0 20px;
-
+  color: #F8FAFC;
   font-size: 24px;
   font-weight: 600;
-  line-height: 32px;
-  color: #F8FAFC;
+  line-height: 1.35;
 }
-
 .carte-parcours p {
   margin: 0;
-
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 28px;
   color: #CBD5E1;
+  font-size: 18px;
+  line-height: 1.55;
 }
 
-
-/* Espacement entre les cartes du parcours */
-
-.carte-parcours + .carte-parcours {
-  margin-top: 24px;
-}
-
-
-/* Section Contact */
-
-.contact {
-  margin-top: 160px;
-}
-
-.contact h2 {
-  margin: 0 0 50px;
-  font-size: 40px;
-  font-weight: 700;
-  line-height: 1.2;
-  color: #F8FAFC;
-}
-
-
-/* Texte de la section Contact */
-
+/* 8. CONTACT ----------------------------------------- */
+.contact { margin-top: 160px; }
+.contact h2 { margin-bottom: 50px; }
 .contact p {
   max-width: 650px;
   margin: 0 0 32px;
-
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 1.5;
   color: #CBD5E1;
+  font-size: 20px;
+  line-height: 1.5;
 }
 
-
-/* Alignement des boutons Contact */
-
-.boutons-contact {
-  display: flex;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-
-
-/* Pied de page */
-
+/* 9. FOOTER ------------------------------------------ */
 .footer {
   max-width: 1440px;
   margin: 0 auto;
   padding: 40px 90px;
-
   border-top: 1px solid #334155;
   text-align: center;
 }
-
 .footer p {
   margin: 0;
-
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
   color: #94A3B8;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* 10. ACCESSIBILITÉ ---------------------------------- */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #38BDF8;
+  outline-offset: 4px;
+}
+
+/* 11. TABLETTE : 768 à 1199 px ----------------------- */
+@media (min-width: 768px) and (max-width: 1199px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 28px 40px;
+  }
+  header nav { flex-wrap: wrap; gap: 18px 26px; }
+  header nav a { font-size: 16px; }
+
+  main { padding: 95px 40px 100px; }
+  main > h1 { font-size: clamp(42px, 5vw, 52px); }
+  main > p { margin-top: 28px; font-size: 26px; }
+  .boutons-accueil { margin-top: 42px; gap: 16px; }
+
+  .a-propos {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    margin-top: 120px;
+  }
+  .a-propos-contenu { max-width: 100%; }
+  .a-propos-illustration { width: min(100%, 480px); flex: none; height: 260px; }
+
+  .projets, .competences, .parcours, .contact { margin-top: 120px; }
+  .projets { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+  .projets h2 { margin-bottom: 12px; }
+  .carte-projet { min-height: 520px; }
+
+  .competences { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .competences h2 { margin-bottom: 12px; }
+
+  .footer { padding: 36px 40px; }
+}
+
+/* 12. MOBILE : jusqu'à 767 px ------------------------ */
+@media (max-width: 767px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 24px 20px;
+  }
+  .logo { font-size: 24px; }
+
+  /* Bouton hamburger */
+  .menu-toggle { display: inline-flex; }
+
+  /* Le menu est fermé par défaut. */
+  header nav,
+  header nav.nav {
+    display: none;
+    position: absolute;
+    top: calc(100% - 8px);
+    right: 20px;
+    left: 20px;
+    width: auto;
+    padding: 16px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    background-color: #1E293B;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+    z-index: 20;
+  }
+
+  /* Compatible avec className="nav open" OU "menu-ouvert". */
+  header nav.open,
+  header nav.menu-ouvert,
+  header nav.nav.open {
+    display: flex;
+  }
+  header nav a {
+    display: block;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 16px;
+    line-height: 1.3;
+    text-align: left;
+  }
+  header nav a:hover { background-color: #334155; }
+
+  main { padding: 60px 20px 80px; }
+  main > h1 { font-size: 38px; overflow-wrap: break-word; }
+  main > p { margin-top: 24px; font-size: 22px; }
+
+  .boutons-accueil,
+  .boutons-contact {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 14px;
+  }
+  .boutons-accueil { margin-top: 36px; }
+  .bouton {
+    width: 100%;
+    min-height: 56px;
+    padding: 12px 16px;
+    font-size: 16px;
+  }
+
+  .a-propos h2,
+  .projets h2,
+  .competences h2,
+  .parcours h2,
+  .contact h2 {
+    margin-bottom: 24px;
+    font-size: 30px;
+  }
+
+  .a-propos {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 28px;
+    margin-top: 100px;
+  }
+  .a-propos-contenu { width: 100%; max-width: 100%; }
+  .a-propos p { margin-bottom: 18px; font-size: 16px; line-height: 1.6; }
+  .a-propos-illustration {
+    width: 100%;
+    height: 200px;
+    flex: none;
+    font-size: 72px;
+  }
+
+  .projets, .competences, .parcours, .contact { margin-top: 96px; }
+  .projets, .competences { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .projets h2, .competences h2 { margin-bottom: 4px; }
+
+  .carte-projet { min-height: 0; padding: 18px; }
+  img.image-projet, .image-projet { height: 180px; }
+  .carte-projet h3 { margin: 20px 0 12px; font-size: 21px; }
+  .carte-projet p { margin-bottom: 14px; font-size: 16px; line-height: 1.5; }
+  .carte-projet .technologies { margin-top: 4px; font-size: 14px; }
+  .bouton-code { min-height: 52px; font-size: 15px; }
+
+  .carte-competence { min-height: 0; padding: 22px; }
+  .carte-competence h3 { margin-bottom: 14px; font-size: 20px; }
+  .carte-competence p { font-size: 16px; line-height: 1.5; }
+
+  .carte-parcours { max-width: 100%; padding: 22px; }
+  .carte-parcours h3 { margin-bottom: 12px; font-size: 20px; }
+  .carte-parcours p { font-size: 16px; line-height: 1.6; }
+
+  .contact p { max-width: 100%; margin-bottom: 24px; font-size: 17px; line-height: 1.6; }
+
+  .footer { margin: 0 20px; padding: 30px 0; }
+  .footer p { font-size: 14px; }
+}
+
+/* 13. TRÈS PETITS TÉLÉPHONES ------------------------- */
+@media (max-width: 359px) {
+  main > h1 { font-size: 34px; }
+  .logo { font-size: 22px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .bouton { transition: none; }
+}
+
+
+/* Liens vers les projets GitHub */
+
+a.bouton-code {
+  text-decoration: none;
+  text-align: center;
+}
+
+a.bouton-code:hover {
+  background-color: #1D4ED8;
 }
