@@ -9,6 +9,12 @@ Portfolio personnel réalisé avec React et Vite pour présenter mon parcours, m
 
 Le portfolio est accessible sur ordinateur, tablette et mobile.
 
+
+### Aperçu du portfolio
+
+![Capture d'écran du portfolio Grégory.dev](public/images/portfolio-preview.png)
+
+
 ## 👨‍💻 À propos
 
 Je suis Grégory, développeur web junior en reconversion professionnelle, actuellement en formation chez OpenClassrooms.
