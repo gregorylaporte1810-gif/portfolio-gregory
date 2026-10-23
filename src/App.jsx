@@ -1,7 +1,8 @@
-
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
+import ProjectCard from './components/ProjectCard.jsx';
 import './App.css';
+
 
 
 function App() {
@@ -54,106 +55,40 @@ function App() {
 
       
 
-      <section id="projets" className="projets">
-        <h2>Mes projets</h2>
+        <section id="projets" className="projets">
+          <h2>Mes projets</h2>
 
-        <div className="carte-projet">
-          
-        <img
-          src="/images/kasa-accueil.png"
-          alt="Capture d'écran du projet Kasa"
-          className="image-projet"
-        />
-
-
-          <h3>Kasa — Application React</h3>
-
-          <p>
-            Plateforme de location de logements développée
-            avec React.
-          </p>
-
-          <p className="technologies">
-            React · JavaScript · Sass · Vite
-          </p>
-
-          
-          
-          <a
-            href="https://github.com/gregorylaporte1810-gif/kasa"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bouton-code"
-          >
-            Voir le code
-          </a>
-
-          </div>
-
-          <div className="carte-projet">
-            
-            <img
-              src="/images/mon-vieux-grimoire.png"
-              alt="Capture d'écran du projet Mon Vieux Grimoire"
-              className="image-projet"
-            />
+          <ProjectCard
+            image="/images/kasa-accueil.png"
+            alt="Capture d'écran du projet Kasa"
+            title="Kasa — Application React"
+            description="Plateforme de location de logements développée avec React."
+            technologies="React · JavaScript · Sass · Vite"
+            githubUrl="https://github.com/gregorylaporte1810-gif/kasa"
+          />
 
 
-            <h3>Mon Vieux Grimoire — API REST</h3>
-
-            <p>
-              API REST permettant de gérer et de noter
-              des livres avec Node.js et MongoDB.
-            </p>
-
-            <p className="technologies">
-              Node.js · Express · MongoDB · JWT
-            </p>
-
-            
-          <a
-            href="https://github.com/gregorylaporte1810-gif/mon-vieux-grimoire"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bouton-code"
-          >
-            Voir le code
-          </a>
-
-          </div>
+          <ProjectCard
+            image="/images/mon-vieux-grimoire.png"
+            alt="Capture d'écran du projet Mon Vieux Grimoire"
+            title="Mon Vieux Grimoire — API REST"
+            description="API REST permettant de gérer et de noter des livres avec Node.js et MongoDB."
+            technologies="Node.js · Express · MongoDB · JWT"
+            githubUrl="https://github.com/gregorylaporte1810-gif/mon-vieux-grimoire"
+          />
 
 
-          <div className="carte-projet">
-            
-            <img
-              src="/images/cap-forme (2).png"
-              alt="Capture d'écran du projet Cap Forme"
-              className="image-projet"
-            />
 
 
-            <h3>Cap Forme — Suivi personnel</h3>
+          <ProjectCard
+            image="/images/cap-forme (2).png"
+            alt="Capture d'écran du projet Cap Forme"
+            title="Cap Forme — Suivi personnel"
+            description="Application web de suivi du poids, des objectifs et des habitudes quotidiennes."
+            technologies="React · Supabase · PostgreSQL · Recharts"
+            githubUrl="https://github.com/gregorylaporte1810-gif/cap-forme"
+          />
 
-            <p>
-              Application web de suivi du poids, des
-              objectifs et des habitudes quotidiennes.
-            </p>
-
-            <p className="technologies">
-              React · Supabase · PostgreSQL · Recharts
-            </p>
-
-            
-            <a
-              href="https://github.com/gregorylaporte1810-gif/cap-forme"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bouton-code"
-            >
-              Voir le code
-            </a>
-
-          </div>
 
       </section>
 
