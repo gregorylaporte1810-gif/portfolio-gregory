@@ -1,47 +1,16 @@
 
-import { useState } from 'react'
-import './App.css'
-
+import Header from './components/Header.jsx';
+import Footer from './components/Footer.jsx';
+import './App.css';
 
 
 function App() {
   
-  const [menuOpen, setMenuOpen] = useState(false);
+
 
   return (
     <>
-      <header className="header">
-        <div className="logo">
-          Grégory<span>.dev</span>
-        </div>
-
-        
-        <button
-          type="button"
-          className="menu-toggle"
-          aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
-          aria-controls="navigation-principale"
-          aria-expanded={menuOpen}
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          {menuOpen ? "✕" : "☰"}
-        </button>
-
-        
-          <nav
-            id="navigation-principale"
-            aria-label="Navigation principale"
-            className={menuOpen ? "menu-ouvert" : ""}
-          >
-
-          <a href="#accueil" onClick={() => setMenuOpen(false)}>Accueil</a>
-          <a href="#apropos" onClick={() => setMenuOpen(false)}>À propos</a>
-          <a href="#projets" onClick={() => setMenuOpen(false)}>Projets</a>
-          <a href="#competences" onClick={() => setMenuOpen(false)}>Compétences</a>
-          <a href="#parcours" onClick={() => setMenuOpen(false)}>Parcours</a>
-          <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
-        </nav>
-      </header>
+      <Header />
 
       
       <main id="accueil">
@@ -308,11 +277,7 @@ function App() {
       </main>
 
       
-      <footer className="footer">
-        <p>
-          © 2026 Grégory.dev — Tous droits réservés.
-        </p>
-      </footer>
+      <Footer />
 
 
     </>
