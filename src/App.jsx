@@ -1,6 +1,8 @@
+
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import ProjectCard from './components/ProjectCard.jsx';
+import { projects } from './data/projects.js';
 import './App.css';
 
 
@@ -58,36 +60,18 @@ function App() {
         <section id="projets" className="projets">
           <h2>Mes projets</h2>
 
+
+        {projects.map((project) => (
           <ProjectCard
-            image="/images/kasa-accueil.png"
-            alt="Capture d'écran du projet Kasa"
-            title="Kasa — Application React"
-            description="Plateforme de location de logements développée avec React."
-            technologies="React · JavaScript · Sass · Vite"
-            githubUrl="https://github.com/gregorylaporte1810-gif/kasa"
+            key={project.id}
+            image={project.image}
+            alt={project.alt}
+            title={project.title}
+            description={project.description}
+            technologies={project.technologies}
+            githubUrl={project.githubUrl}
           />
-
-
-          <ProjectCard
-            image="/images/mon-vieux-grimoire.png"
-            alt="Capture d'écran du projet Mon Vieux Grimoire"
-            title="Mon Vieux Grimoire — API REST"
-            description="API REST permettant de gérer et de noter des livres avec Node.js et MongoDB."
-            technologies="Node.js · Express · MongoDB · JWT"
-            githubUrl="https://github.com/gregorylaporte1810-gif/mon-vieux-grimoire"
-          />
-
-
-
-
-          <ProjectCard
-            image="/images/cap-forme (2).png"
-            alt="Capture d'écran du projet Cap Forme"
-            title="Cap Forme — Suivi personnel"
-            description="Application web de suivi du poids, des objectifs et des habitudes quotidiennes."
-            technologies="React · Supabase · PostgreSQL · Recharts"
-            githubUrl="https://github.com/gregorylaporte1810-gif/cap-forme"
-          />
+        ))}
 
 
       </section>
