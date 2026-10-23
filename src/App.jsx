@@ -35,19 +35,32 @@ function App() {
         <div className="a-propos-contenu">
           <h2>À propos de moi</h2>
 
-          <p>
-            Ancien vendeur en magasin de bricolage, je me
-            reconvertis dans le développement web grâce
-            à ma formation OpenClassrooms.
-          </p>
 
-          <p>
-            Je développe des applications avec React,
-            Node.js et MongoDB. Mon expérience dans la
-            vente m'a permis de développer mon sens de
-            l'écoute, ma capacité à résoudre des problèmes
-            et mon esprit d'équipe.
-          </p>
+        <p>
+          Je suis développeur web junior en reconversion professionnelle,
+          actuellement en formation chez OpenClassrooms. Après une
+          expérience dans la vente et le conseil en magasin de bricolage,
+          j'ai choisi de me tourner vers le développement web pour
+          créer des applications utiles et accessibles.
+        </p>
+
+        <p>
+          Au fil de ma formation, j'ai développé des projets concrets
+          avec React, JavaScript, Node.js, Express et MongoDB.
+          De Kasa à Mon Vieux Grimoire, en passant par mon
+          application personnelle Cap Forme, j'ai appris à structurer
+          mon code, créer des composants réutilisables et améliorer
+          l'expérience utilisateur.
+        </p>
+
+        <p>
+          Mon parcours professionnel m'a apporté le sens de l'écoute,
+          la capacité à résoudre des problèmes et le goût du travail
+          en équipe. Aujourd'hui, je souhaite continuer à progresser,
+          approfondir mes compétences techniques et contribuer à des
+          projets web au sein d'une équipe de développeurs.
+        </p>
+
         </div>
 
         <div className="a-propos-illustration" aria-hidden="true">
